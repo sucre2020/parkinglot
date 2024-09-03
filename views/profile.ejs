@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/images/faviconMetroCity.webp" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Track Vehicle</a></li>
+            <% if (user) { %>
+            <li><a href="/auth/logout">Log out</a></li>
+            <li><a href="/admin">Admin Page</a></li>
+            <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <header>
+        <h1>Welcome to your profile, <%= user.username %></h1>
+    </header>
+    <main>
+        <div class="profile-info">
+            <img src="<%= user.thumbnail %>" alt="User Picture" />
+            <h2><%= user.username %></h2>
+        </div>
+        <div class="balance">
+            Your Balance is: 0.00<span id="user-balance"><%= user.balance %> NGR</span>
+        </div>
+        <a href="/payticket" class="top-up">Get Ticket</a>
+        <a href="/transaction" class="track-vehicle">Transactions</a>
+        <div class="arrival-times">
+            <h3>Recent Trips</h3>
+            <ul id="arrival-times-list">
+                <!-- Arrival times will be dynamically populated here -->
+            </ul>
+        </div>
+    </main>
+    <script src="/engine.js"></script>
+    <footer>
+        <p>&copy; 2024 Metro City Bus. All rights reserved.</p>
+        <p>Contact us at <a href="">support@metrocitybus.com</a></p>
+    </footer>
+</body>
+</html>

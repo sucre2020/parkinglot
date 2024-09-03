@@ -1,0 +1,51 @@
+<!-- views/add-vehicle.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Vehicle</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Add Vehicle</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/vehicles">My Vehicles</a></li>
+        <li><a href="/reservations">My Reservations</a></li>
+        <li><a href="/transactions">Transaction History</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/vehicles/add" method="POST">
+      <label for="licensePlate">License Plate:</label>
+      <input type="text" id="licensePlate" name="licensePlate" required>
+
+      <label for="make">Make:</label>
+      <input type="text" id="make" name="make">
+
+      <label for="model">Model:</label>
+      <input type="text" id="model" name="model">
+
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year">
+
+      <button type="submit">Add Vehicle</button>
+    </form>
+
+    <% if (errors.length > 0) { %>
+      <ul>
+        <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </main>
+</body>
+</html>

@@ -1,0 +1,267 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+nav {
+    background: #3b82f6;
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 10px 10px;
+}
+
+nav a {
+    color: #fff;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+main, header {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 10px;
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+footer {
+    margin-top: auto;
+    background: #3b82f6;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    nav a {
+        padding: 10px 20px;
+    }
+}
+
+/* Homepage Specific Styles */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container .text {
+    flex: 1;
+}
+
+.container .text h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.container .text p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.container .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.container .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Login Page Specific Styles */
+.google-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: #ff5353;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.google-btn:hover {
+    background: #e14e4e;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.login, .register {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register {
+    margin-top: 20px;
+}
+
+.register h2 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .register {
+        margin-top: 40px;
+    }
+}
+
+/* Profile Page Specific Styles */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-info h2 {
+    margin: 0;
+}
+
+.balance {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.top-up, .track-vehicle {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    background: #3b82f6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.arrival-times {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.arrival-times h3 {
+    margin-bottom: 10px;
+}
+
+.arrival-times ul {
+    list-style: none;
+    padding: 0;
+}
+
+.arrival-times li {
+    margin: 5px 0;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .top-up, .track-vehicle {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+/*VehicleInfo Page*/
+
+.text{
+    margin-top: -70px;
+}
+
+/*Pay Button*/
+.pay-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: #ff5353;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+
+}
+
+.pay-btn:hover{
+    background: #e14e4e;
+}

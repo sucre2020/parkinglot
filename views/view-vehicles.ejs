@@ -1,0 +1,38 @@
+<!-- views/view-vehicles.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Vehicles</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Vehicles</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="vehicles">My Vehicles</a></li>
+        <li><a href="/vehicles/add">Add Vehicle</a></li>
+        <li><a href="/reservations">My Reservations</a></li>
+        <li><a href="/transactions">Transaction History</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <% if (vehicles.length > 0) { %>
+      <ul>
+        <% vehicles.forEach(vehicle => { %>
+          <li><strong>License Plate:</strong> <%= vehicle.licensePlate %> | <strong>Make:</strong> <%= vehicle.make %> | <strong>Model:</strong> <%= vehicle.model %> | <strong>Year:</strong> <%= vehicle.year %></li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>You have no vehicles added.</p>
+    <% } %>
+  </main>
+</body>
+</html>

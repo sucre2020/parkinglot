@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transaction History</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Transaction History</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="vehicles">My Vehicles</a></li>
+        <li><a href="/reservations">My Reservations</a></li>
+        <li><a href="/transactions">Transaction History</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <% if (transactions.length > 0) { %>
+      <ul>
+        <% transactions.forEach(transaction => { %>
+          <li>
+            <strong>Amount:</strong> $<%= transaction.amount %> |
+            <strong>Date:</strong> <%= transaction.date.toDateString() %> |
+            <strong>Status:</strong> <%= transaction.status %>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>You have no transactions.</p>
+    <% } %>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Parking Lot. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:support@parkinglotapp.com">support@parkinglotapp.com</a></p>
+  </footer>
+</body>
+</html>

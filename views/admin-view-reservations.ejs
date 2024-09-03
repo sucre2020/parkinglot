@@ -1,0 +1,54 @@
+<!-- views/admin-view-reservations.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Reservations</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>All Reservations</h1>
+    <nav>
+      <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/users">Manage Users</a></li>
+        <li><a href="/admin/parking-status">Parking Lot Status</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <% if (reservations.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% reservations.forEach(reservation => { %>
+            <tr>
+              <td><%= reservation.vehicleId.licensePlate %></td>
+              <td><%= reservation.startTime %></td>
+              <td><%= reservation.endTime %></td>
+              <td><%= reservation.status %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No reservations found.</p>
+    <% } %>
+  </main>
+  <footer>
+    <p>&copy; 2024 Parking Lot. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:support@parkinglotapp.com">support@parkinglotapp.com</a></p>
+  </footer>
+</body>
+</html>
